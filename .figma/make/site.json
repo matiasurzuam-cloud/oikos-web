@@ -1,7 +1,14 @@
 {
-  "description": "This modern web application streamlines project management for teams, enhancing collaboration and productivity through intuitive tools and real-time updates.",
+  "title": "OIKO'S Restaurant",
+  "description": "OIKO'S — Sabor y tradición molinense. Churrascos, pizzas, cafetería y almuerzos caseros en Membrillar 1214, Molina.",
+  "icons": {
+    "icon": "/favicon.png"
+  },
+  "openGraph": {
+    "image": "/images/general-mesas.jpg"
+  },
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
