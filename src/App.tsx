@@ -221,6 +221,7 @@ function AdminDrawer({ onClose }: { onClose: () => void }) {
   const [precio, setPrecio] = useState('')
   const [activo, setActivo] = useState(true)
   const [saveState, setSaveState] = useState<'idle'|'saving'|'saved'|'error'>('idle')
+  const [saveError, setSaveError] = useState('')
 
   const loadPlato = async () => {
     try {
@@ -261,11 +262,13 @@ function AdminDrawer({ onClose }: { onClose: () => void }) {
 
   const handleSave = async () => {
     setSaveState('saving')
+    setSaveError('')
     try {
       await tablesDB.upsertRow<PlatoDelDiaRow>({ databaseId: APPWRITE_DATABASE_ID, tableId: APPWRITE_COLLECTION_ID, rowId: PLATO_DEL_DIA_ROW_ID, data: { nombre, descripcion, precio, activo } })
       setSaveState('saved')
       setTimeout(() => setSaveState('idle'), 2500)
-    } catch {
+    } catch (e) {
+      setSaveError(e instanceof Error ? e.message : String(e))
       setSaveState('error')
     }
   }
@@ -343,7 +346,7 @@ function AdminDrawer({ onClose }: { onClose: () => void }) {
                 {saveState==='saving' ? 'Guardando…' : 'Guardar cambios'}
               </button>
               {saveState==='saved' && <p style={{ fontSize:'12px', color:'#34D399', textAlign:'center' }}>Guardado ✓ — ya está visible para todos los visitantes.</p>}
-              {saveState==='error' && <p style={{ fontSize:'12px', color:'#F87171', textAlign:'center' }}>No se pudo guardar. Intenta de nuevo.</p>}
+              {saveState==='error' && <p style={{ fontSize:'12px', color:'#F87171', textAlign:'center' }}>No se pudo guardar: {saveError || 'error desconocido'}</p>}
 
               <Divider />
               <button onClick={handleLogout} style={{ padding:'12px', borderRadius:'14px', background:'none', color:C.muted, fontWeight:600, fontSize:'13px', border:`1px solid ${C.border}`, cursor:'pointer', fontFamily:'inherit' }}>
