@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, type ReactNode, type CSSProperties } from 'react'
 import type { Models } from 'appwrite'
 import oikosLogo from '@/imports/oikos-logo.png'
 import oikosWatermark from '@/imports/oikos-logo-watermark.png'
@@ -114,6 +114,50 @@ const Label = ({ children }: { children: string }) => (
 
 const Divider = () => <div style={{ height: '1px', background: C.border, width: '100%' }} />
 
+// Aparece con un fade + slide-up sutil cuando entra al viewport (una sola vez)
+function Reveal({ children, className, style }: { children: ReactNode; className?: string; style?: CSSProperties }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setVisible(true); obs.disconnect() }
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+  return <div ref={ref} className={`reveal ${visible ? 'is-visible' : ''}${className ? ' ' + className : ''}`} style={style}>{children}</div>
+}
+
+// Separador decorativo entre secciones: línea con degradado + ✦, para no dejar
+// el límite entre dos bloques como un corte plano de color sólido
+function SectionOrnament() {
+  return (
+    <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'18px', padding:'0 32px' }} aria-hidden="true">
+      <span style={{ height:'1px', width:'96px', maxWidth:'20vw', background:'linear-gradient(to right, transparent, rgba(196,125,59,0.5))' }} />
+      <span style={{ color:C.amber, fontSize:'13px' }}>✦</span>
+      <span style={{ height:'1px', width:'96px', maxWidth:'20vw', background:'linear-gradient(to left, transparent, rgba(196,125,59,0.5))' }} />
+    </div>
+  )
+}
+
+// Capa de fondo compartida (textura de marca + resplandores difusos) para que las
+// secciones con harto espacio vacío no se sientan planas. Va como primer hijo de
+// una sección con position:relative — el contenido real (que va después en el DOM)
+// pinta encima sin necesitar z-index explícito.
+function SectionBackdrop({ blobPosition = 'top-right' }: { blobPosition?: 'top-right' | 'bottom-left' }) {
+  const blobStyle: CSSProperties = blobPosition === 'top-right'
+    ? { top: '-10%', right: '-8%' }
+    : { bottom: '-10%', left: '-8%' }
+  return (
+    <div style={{ position:'absolute', inset:0, overflow:'hidden', pointerEvents:'none' }} aria-hidden="true">
+      <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'130px 60px', opacity:0.05 }} />
+      <div style={{ position:'absolute', width:'46vw', height:'46vw', maxWidth:'620px', maxHeight:'620px', borderRadius:'50%', background:'radial-gradient(circle, rgba(196,125,59,0.14), transparent 70%)', filter:'blur(10px)', ...blobStyle }} />
+    </div>
+  )
+}
+
 // ─── Plato del Día ────────────────────────────────────────────────────────────
 interface PlatoDelDia { activo: boolean; nombre: string; descripcion: string; precio: string }
 interface PlatoDelDiaRow extends Models.Row, PlatoDelDia {}
@@ -121,29 +165,45 @@ interface PlatoDelDiaRow extends Models.Row, PlatoDelDia {}
 function PlatoDelDiaCard({ plato }: { plato: PlatoDelDia }) {
   if (!plato.activo || !plato.nombre.trim()) return null
   return (
-    <div className="md:absolute md:top-36 md:right-8 md:w-80" style={{
-      marginTop: '28px',
-      borderRadius: '20px',
-      padding: '22px',
-      background: 'linear-gradient(160deg, rgba(196,125,59,0.18), rgba(16,15,20,0.94))',
-      backdropFilter: 'blur(16px)',
-      border: '1px solid rgba(196,125,59,0.35)',
-      boxShadow: '0 20px 50px rgba(0,0,0,0.45)',
+    <div className="lg:absolute lg:top-[84px] lg:right-8 lg:w-[380px] plato-glow plato-float" style={{
+      marginTop: '32px',
+      position: 'relative',
+      borderRadius: '26px',
+      padding: '2px',
+      background: `linear-gradient(135deg, ${C.amber}, rgba(196,125,59,0.15) 45%, ${C.amber})`,
     }}>
-      <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'14px' }}>
-        <div style={{ width:'36px', height:'36px', borderRadius:'10px', background:C.amber, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2" /><path d="M7 2v20" />
-            <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
-          </svg>
+      {/* cinta "HOY" */}
+      <div style={{ position:'absolute', top:'20px', right:'-38px', transform:'rotate(45deg)', background:C.red, color:'white', fontSize:'10px', fontWeight:800, letterSpacing:'0.14em', padding:'5px 44px', zIndex:2, boxShadow:'0 4px 10px rgba(0,0,0,0.35)' }}>HOY</div>
+
+      <div style={{ position:'relative', borderRadius:'24px', padding:'30px', overflow:'hidden', background:'linear-gradient(165deg, #221A10 0%, #14110C 60%, #100D08 100%)' }}>
+        <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'100px 46px', opacity:0.35, pointerEvents:'none' }} />
+        <div className="plato-shimmer" />
+
+        <div style={{ position:'relative' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'20px' }}>
+            <div className="plato-pulse-ring" style={{ width:'52px', height:'52px', borderRadius:'16px', background:`linear-gradient(135deg, ${C.amber}, #8A5A2A)`, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2" /><path d="M7 2v20" />
+                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+              </svg>
+            </div>
+            <div>
+              <p style={{ fontSize:'13px', fontWeight:800, letterSpacing:'0.12em', textTransform:'uppercase', color:C.amber, lineHeight:1.3 }}>🍽 Plato del Día</p>
+              <p style={{ fontSize:'11px', color:C.muted }}>Disponible hoy en el local</p>
+            </div>
+          </div>
+
+          <p className="serif" style={{ fontSize:'30px', fontWeight:800, color:'white', marginBottom:'10px', lineHeight:1.08 }}>{plato.nombre}</p>
+          <p style={{ fontSize:'14px', lineHeight:1.6, color:'rgba(237,233,224,0.68)', marginBottom: plato.precio.trim() ? '22px' : 0 }}>{plato.descripcion}</p>
+
+          {plato.precio.trim() && (
+            <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+              <span style={{ height:'1px', flex:1, background:'linear-gradient(to right, rgba(196,125,59,0.5), transparent)' }} />
+              <span style={{ display:'inline-flex', alignItems:'center', padding:'9px 20px', borderRadius:'999px', background:`linear-gradient(135deg, ${C.amber}, #8A5A2A)`, color:'white', fontSize:'17px', fontWeight:800, boxShadow:'0 8px 20px rgba(196,125,59,0.4)' }}>{plato.precio}</span>
+            </div>
+          )}
         </div>
-        <span style={{ fontSize:'11px', fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase', color:C.amber }}>🍽 Plato del Día</span>
       </div>
-      <p className="serif" style={{ fontSize:'22px', fontWeight:700, color:'white', marginBottom:'6px', lineHeight:1.15 }}>{plato.nombre}</p>
-      <p style={{ fontSize:'13px', lineHeight:1.55, color:'rgba(237,233,224,0.65)', marginBottom: plato.precio.trim() ? '16px' : 0 }}>{plato.descripcion}</p>
-      {plato.precio.trim() && (
-        <span style={{ display:'inline-block', padding:'6px 14px', borderRadius:'999px', background:'rgba(196,125,59,0.2)', color:C.amber, fontSize:'14px', fontWeight:700 }}>{plato.precio}</span>
-      )}
     </div>
   )
 }
@@ -548,13 +608,16 @@ function ReservationSection() {
   }
 
   return (
-    <section id="reservas" style={{ padding:'96px 32px', background:C.surface, borderTop:`1px solid ${C.border}` }}>
-      <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-        <div style={{ textAlign:'center', marginBottom:'56px' }}>
+    <section id="reservas" style={{ position:'relative', padding:'80px 32px', background:C.surface, borderTop:`1px solid ${C.border}` }}>
+      <SectionBackdrop blobPosition="top-right" />
+      <div style={{ position:'relative', maxWidth:'1200px', margin:'0 auto' }}>
+        <SectionOrnament />
+        <div style={{ height:'40px' }} />
+        <Reveal style={{ textAlign:'center', marginBottom:'56px' }}>
           <Label>Reserva tu Mesa</Label>
           <h2 className="serif" style={{ fontSize:'clamp(2rem,4vw,3.5rem)', fontWeight:900, letterSpacing:'-0.03em', color:C.text, marginBottom:'16px' }}>Aparta tu Lugar</h2>
           <p style={{ fontSize:'14px', color:C.muted, maxWidth:'480px', margin:'0 auto' }}>Completa tus datos y te confirmamos por WhatsApp en minutos.</p>
-        </div>
+        </Reveal>
 
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(340px, 1fr))', gap:'16px', alignItems:'stretch' }}>
 
@@ -747,7 +810,12 @@ export default function App() {
           <img src="/images/general-mesas.jpg" alt="" aria-hidden="true" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', transform:'scale(1.2)', filter:'blur(28px) brightness(0.5)' }} />
           <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'140px 64px', opacity:0.5 }} />
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 60% 55% at center, transparent 40%, rgba(196,125,59,0.16) 100%)' }} />
-          <img src="/images/general-mesas.jpg" alt="Interior OIKO'S" style={{ position:'relative', width:'100%', height:'100%', objectFit:'contain', filter:'drop-shadow(0 20px 60px rgba(0,0,0,0.5))' }} />
+          <img src="/images/general-mesas.jpg" alt="Interior OIKO'S" style={{
+            position:'relative', width:'100%', height:'100%', objectFit:'contain',
+            filter:'drop-shadow(0 20px 60px rgba(0,0,0,0.5))',
+            maskImage:'radial-gradient(ellipse 78% 82% at center, black 55%, transparent 100%)',
+            WebkitMaskImage:'radial-gradient(ellipse 78% 82% at center, black 55%, transparent 100%)',
+          }} />
           <div className="grain" style={{ position:'absolute', inset:0, opacity:0.5, mixBlendMode:'overlay', pointerEvents:'none' }} />
           <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, #07060A 0%, rgba(7,6,10,0.65) 55%, rgba(7,6,10,0.2) 100%)' }} />
         </div>
@@ -806,11 +874,12 @@ export default function App() {
       </div>
 
       {/* ── MENU ──────────────────────────────────────────────────────────── */}
-      <section id="menu" ref={menuRef} style={{ padding:'96px 32px', background:C.bg }}>
-        <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
+      <section id="menu" ref={menuRef} style={{ position:'relative', padding:'80px 32px', background:C.bg }}>
+        <SectionBackdrop blobPosition="top-right" />
+        <div style={{ position:'relative', maxWidth:'1200px', margin:'0 auto' }}>
 
           {/* Section header */}
-          <div style={{ display:'grid', gridTemplateColumns:'1fr auto', alignItems:'end', gap:'24px', marginBottom:'48px' }}>
+          <Reveal style={{ display:'grid', gridTemplateColumns:'1fr auto', alignItems:'end', gap:'24px', marginBottom:'48px' }}>
             <div>
               <Label>Carta Digital</Label>
               <h2 className="serif" style={{ fontSize:'clamp(2rem,4vw,3.5rem)', fontWeight:900, letterSpacing:'-0.03em', color:C.text, lineHeight:1 }}>Nuestra Carta</h2>
@@ -821,7 +890,7 @@ export default function App() {
                 style={{ paddingLeft:'40px', paddingRight:'16px', paddingTop:'12px', paddingBottom:'12px', borderRadius:'999px', background:C.surface, border:`1px solid ${C.border}`, color:C.text, fontSize:'13px', outline:'none', fontFamily:'inherit', width:'200px', transition:'border-color 0.2s' }}
                 onFocus={e=>(e.target.style.borderColor=C.amber)} onBlur={e=>(e.target.style.borderColor=C.border)} />
             </div>
-          </div>
+          </Reveal>
 
           {/* Category tabs */}
           <div style={{ display:'flex', gap:'6px', overflowX:'auto', paddingBottom:'4px', marginBottom:'40px', scrollbarWidth:'none' }}>
@@ -863,9 +932,12 @@ export default function App() {
       <ReservationSection />
 
       {/* ── GALLERY ───────────────────────────────────────────────────────── */}
-      <section id="galeria" style={{ padding:'96px 32px', background:C.surface }}>
-        <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', alignItems:'end', gap:'24px', marginBottom:'48px' }}>
+      <section id="galeria" style={{ position:'relative', padding:'80px 32px', background:C.surface }}>
+        <SectionBackdrop blobPosition="bottom-left" />
+        <div style={{ position:'relative', maxWidth:'1200px', margin:'0 auto' }}>
+          <SectionOrnament />
+          <div style={{ height:'40px' }} />
+          <Reveal style={{ display:'grid', gridTemplateColumns:'1fr 1fr', alignItems:'end', gap:'24px', marginBottom:'48px' }}>
             <div>
               <Label>Nuestro Espacio</Label>
               <h2 className="serif" style={{ fontSize:'clamp(2rem,4vw,3.5rem)', fontWeight:900, letterSpacing:'-0.03em', color:C.text, lineHeight:1 }}>Tradición y Calidez</h2>
@@ -873,7 +945,7 @@ export default function App() {
             <p style={{ fontSize:'14px', lineHeight:1.7, color:C.muted }}>
               Arcos de piedra natural, vigas de madera noble y una vitrina de pastelería artesanal que te invita a quedarte.
             </p>
-          </div>
+          </Reveal>
 
           {/* Photo grid — all three shown together, same 3:4 aspect as the source photos so nothing gets cropped */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))', gap:'16px' }}>
@@ -891,12 +963,15 @@ export default function App() {
       </section>
 
       {/* ── HORARIOS ──────────────────────────────────────────────────────── */}
-      <section id="horarios" style={{ padding:'96px 32px', background:C.bg }}>
-        <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-          <div style={{ textAlign:'center', marginBottom:'64px' }}>
+      <section id="horarios" style={{ position:'relative', padding:'80px 32px', background:C.bg }}>
+        <SectionBackdrop blobPosition="top-right" />
+        <div style={{ position:'relative', maxWidth:'1200px', margin:'0 auto' }}>
+          <SectionOrnament />
+          <div style={{ height:'40px' }} />
+          <Reveal style={{ textAlign:'center', marginBottom:'64px' }}>
             <Label>Encuéntranos</Label>
             <h2 className="serif" style={{ fontSize:'clamp(2rem,4vw,3.5rem)', fontWeight:900, letterSpacing:'-0.03em', color:C.text }}>Horarios y Ubicación</h2>
-          </div>
+          </Reveal>
 
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(320px,1fr))', gap:'16px' }}>
             {/* Hours */}
@@ -981,9 +1056,10 @@ export default function App() {
             <p style={{ fontSize:'12px', color:'rgba(237,233,224,0.2)' }}>© 2026 OIKO'S — Sabor y Tradición Molinense</p>
             <div style={{ display:'flex', alignItems:'center', gap:'16px' }}>
               <p style={{ fontSize:'12px', color:'rgba(237,233,224,0.15)' }}>Membrillar 1214 · Molina, Maule ✦</p>
-              <button onClick={()=>setAdminOpen(true)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'11px', color:'rgba(237,233,224,0.15)', fontFamily:'inherit', padding:0 }}
-                onMouseEnter={e=>(e.currentTarget.style.color='rgba(237,233,224,0.4)')}
-                onMouseLeave={e=>(e.currentTarget.style.color='rgba(237,233,224,0.15)')}>
+              <button onClick={()=>setAdminOpen(true)} style={{ display:'flex', alignItems:'center', gap:'6px', padding:'7px 14px', borderRadius:'999px', background:C.faint, border:`1px solid ${C.border}`, cursor:'pointer', fontSize:'12px', fontWeight:600, color:C.muted, fontFamily:'inherit', transition:'all 0.2s' }}
+                onMouseEnter={e=>{ e.currentTarget.style.color=C.amber; e.currentTarget.style.borderColor='rgba(196,125,59,0.35)' }}
+                onMouseLeave={e=>{ e.currentTarget.style.color=C.muted; e.currentTarget.style.borderColor=C.border }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                 Admin
               </button>
             </div>
