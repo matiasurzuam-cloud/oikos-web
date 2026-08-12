@@ -1,0 +1,882 @@
+{
+  "carta": [
+    {
+      "categoria": "Churrascos",
+      "slug": "churrasco",
+      "items": [
+        {
+          "id": "barros-jarpa",
+          "nombre": "Barros Jarpa",
+          "descripcion": "Pan frica 100% artesanal, con queso y jamón.",
+          "precio": 4500,
+          "imagen": "/images/carta/churrasco/barros-jarpa.jpg"
+        },
+        {
+          "id": "churrasco-palta",
+          "nombre": "Churrasco Palta",
+          "descripcion": "Pan frica 100% artesanal, carne de churrasco y palta natural.",
+          "precio": 6200,
+          "imagen": "/images/carta/churrasco/churrasco-palta.jpg"
+        },
+        {
+          "id": "churrasco-mayo",
+          "nombre": "Churrasco Mayo",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa y carne de churrasco.",
+          "precio": 6200,
+          "imagen": "/images/carta/churrasco/churrasco-mayo.jpg"
+        },
+        {
+          "id": "churrasco-huevo",
+          "nombre": "Churrasco Huevo",
+          "descripcion": "Pan frica 100% artesanal, con carne de churrasco y huevo.",
+          "precio": 6200,
+          "imagen": "/images/carta/churrasco/churrasco-huevo.jpg"
+        },
+        {
+          "id": "barros-luco",
+          "nombre": "Barros Luco",
+          "descripcion": "Pan frica 100% artesanal, con queso y carne de churrasco.",
+          "precio": 6500,
+          "imagen": "/images/carta/churrasco/barros-luco.jpg"
+        },
+        {
+          "id": "churrasco-palta-mayo",
+          "nombre": "Churrasco Palta Mayo",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de churrasco y palta.",
+          "precio": 6500,
+          "imagen": "/images/carta/churrasco/churrasco-palta-mayo.jpg"
+        },
+        {
+          "id": "churrasco-italiano",
+          "nombre": "Churrasco Italiano",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de churrasco, palta natural y tomate.",
+          "precio": 6900,
+          "imagen": "/images/carta/churrasco/churrasco-italiano.jpg"
+        },
+        {
+          "id": "churrasco-dinamico",
+          "nombre": "Churrasco Dinámico",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de churrasco, palta natural, tomate, americana y chucrut.",
+          "precio": 6900,
+          "imagen": "/images/carta/churrasco/churrasco-dinamico.jpg"
+        },
+        {
+          "id": "churrasco-tomate-mayo",
+          "nombre": "Churrasco Tomate Mayo",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de churrasco y tomate.",
+          "precio": 6500,
+          "imagen": "/images/carta/churrasco/churrasco-tomate-mayo.jpg"
+        },
+        {
+          "id": "churrasco-chacarero",
+          "nombre": "Churrasco Chacarero",
+          "descripcion": "Pan frica 100% artesanal de la casa, carne de churrasco, poroto verde y tomate.",
+          "precio": 6900,
+          "imagen": "/images/carta/churrasco/churrasco-chacarero.jpg"
+        },
+        {
+          "id": "churrasco-tomate",
+          "nombre": "Churrasco Tomate",
+          "descripcion": "Pan frica 100% artesanal, carne de churrasco y tomate.",
+          "precio": 6200,
+          "imagen": "/images/carta/churrasco/churrasco-tomate.jpg"
+        },
+        {
+          "id": "churrasco-solo",
+          "nombre": "Churrasco Solo",
+          "descripcion": "Pan frica 100% artesanal con carne de churrasco.",
+          "precio": 5800,
+          "imagen": "/images/carta/churrasco/churrasco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sándwiches de Ave",
+      "slug": "ave",
+      "items": [
+        {
+          "id": "ave-italiana",
+          "nombre": "Ave Italiana",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, ave, palta natural y tomate.",
+          "precio": 5500,
+          "imagen": "/images/carta/ave/ave-italiana.jpg"
+        },
+        {
+          "id": "ave-dinamica",
+          "nombre": "Ave Dinámica",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, ave, palta natural, tomate, americana y chucrut.",
+          "precio": 5500,
+          "imagen": "/images/carta/ave/ave-dinamica.jpg"
+        },
+        {
+          "id": "ave-chacarera",
+          "nombre": "Ave Chacarera",
+          "descripcion": "Pan frica 100% artesanal de la casa, ave, poroto verde y tomate.",
+          "precio": 5500,
+          "imagen": "/images/carta/ave/ave-chacarera.jpg"
+        },
+        {
+          "id": "ave-queso",
+          "nombre": "Ave Queso",
+          "descripcion": "Pan frica 100% artesanal, con queso y ave.",
+          "precio": 5000,
+          "imagen": "/images/carta/ave/ave-queso.jpg"
+        },
+        {
+          "id": "ave-palta-mayonesa",
+          "nombre": "Ave Palta Mayonesa",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, ave y palta.",
+          "precio": 5000,
+          "imagen": "/images/carta/ave/ave-palta-mayonesa.jpg"
+        },
+        {
+          "id": "ave-tomate-mayonesa",
+          "nombre": "Ave Tomate Mayonesa",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, ave y tomate.",
+          "precio": 5000,
+          "imagen": "/images/carta/ave/ave-tomate-mayonesa.jpg"
+        },
+        {
+          "id": "ave-palta-tomate",
+          "nombre": "Ave Palta Tomate",
+          "descripcion": "Pan frica 100% artesanal, ave, palta natural y tomate.",
+          "precio": 5000,
+          "imagen": "/images/carta/ave/ave-palta-tomate.jpg"
+        },
+        {
+          "id": "ave-palta",
+          "nombre": "Ave Palta",
+          "descripcion": "Pan frica 100% artesanal, ave y palta natural.",
+          "precio": 4800,
+          "imagen": "/images/carta/ave/ave-palta.jpg"
+        },
+        {
+          "id": "ave-tomate",
+          "nombre": "Ave Tomate",
+          "descripcion": "Pan frica 100% artesanal, ave y tomate.",
+          "precio": 4800,
+          "imagen": "/images/carta/ave/ave-tomate.jpg"
+        },
+        {
+          "id": "ave-mayonesa",
+          "nombre": "Ave Mayonesa",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa y ave.",
+          "precio": 4800,
+          "imagen": "/images/carta/ave/ave-mayonesa.jpg"
+        },
+        {
+          "id": "ave-huevo",
+          "nombre": "Ave Huevo",
+          "descripcion": "Pan frica 100% artesanal, con huevo y ave.",
+          "precio": 4800,
+          "imagen": "/images/carta/ave/ave-huevo.jpg"
+        },
+        {
+          "id": "ave-sola",
+          "nombre": "Ave Sola",
+          "descripcion": "Pan frica 100% artesanal con ave.",
+          "precio": 4300,
+          "imagen": "/images/carta/ave/ave-sola.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sándwiches de Carne Mechada",
+      "slug": "mechada",
+      "items": [
+        {
+          "id": "mechada-italiana",
+          "nombre": "Mechada Italiana",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne mechada, palta natural y tomate.",
+          "precio": 7500,
+          "imagen": "/images/carta/mechada/mechada-italiana.jpg"
+        },
+        {
+          "id": "mechada-dinamica",
+          "nombre": "Mechada Dinámica",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne mechada, palta natural, tomate, americana y chucrut.",
+          "precio": 7500,
+          "imagen": "/images/carta/mechada/mechada-dinamica.jpg"
+        },
+        {
+          "id": "mechada-chacarera",
+          "nombre": "Mechada Chacarera",
+          "descripcion": "Pan frica 100% artesanal de la casa, carne mechada, poroto verde y tomate.",
+          "precio": 7500,
+          "imagen": "/images/carta/mechada/mechada-chacarera.jpg"
+        },
+        {
+          "id": "mechada-queso",
+          "nombre": "Mechada Queso",
+          "descripcion": "Pan frica 100% artesanal, con queso y carne mechada.",
+          "precio": 7100,
+          "imagen": "/images/carta/mechada/mechada-queso.jpg"
+        },
+        {
+          "id": "mechada-tomate",
+          "nombre": "Mechada Tomate",
+          "descripcion": "Pan frica 100% artesanal, carne mechada y tomate.",
+          "precio": 6500,
+          "imagen": "/images/carta/mechada/mechada-tomate.jpg"
+        },
+        {
+          "id": "mechada-mayonesa",
+          "nombre": "Mechada Mayonesa",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa y carne mechada.",
+          "precio": 6500,
+          "imagen": "/images/carta/mechada/mechada-mayonesa.jpg"
+        },
+        {
+          "id": "mechada-huevo",
+          "nombre": "Mechada Huevo",
+          "descripcion": "Pan frica 100% artesanal, con huevo y carne mechada.",
+          "precio": 6500,
+          "imagen": "/images/carta/mechada/mechada-huevo.jpg"
+        },
+        {
+          "id": "mechada-sola",
+          "nombre": "Mechada Sola",
+          "descripcion": "Pan frica 100% artesanal con carne mechada.",
+          "precio": 6500,
+          "imagen": "/images/carta/mechada/mechada-sola.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Sándwiches de Lomo Soler",
+      "slug": "lomo",
+      "items": [
+        {
+          "id": "lomo-italiano",
+          "nombre": "Lomo Italiano",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de lomo soler, palta natural y tomate.",
+          "precio": 6800,
+          "imagen": "/images/carta/lomo/lomo-italiano.jpg"
+        },
+        {
+          "id": "lomo-dinamico",
+          "nombre": "Lomo Dinámico",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de lomo soler, palta natural, tomate, americana y chucrut.",
+          "precio": 6800,
+          "imagen": "/images/carta/lomo/lomo-dinamico.jpg"
+        },
+        {
+          "id": "lomo-chacarero",
+          "nombre": "Lomo Chacarero",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de lomo soler, poroto verde y tomate.",
+          "precio": 6800,
+          "imagen": "/images/carta/lomo/lomo-chacarero.jpg"
+        },
+        {
+          "id": "lomo-luco",
+          "nombre": "Lomo Luco",
+          "descripcion": "Pan frica 100% artesanal, con queso y carne de lomo soler.",
+          "precio": 6400,
+          "imagen": "/images/carta/lomo/lomo-luco.jpg"
+        },
+        {
+          "id": "lomo-palta-mayo",
+          "nombre": "Lomo Palta Mayo",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de lomo soler y palta.",
+          "precio": 6400,
+          "imagen": "/images/carta/lomo/lomo-palta-mayo.jpg"
+        },
+        {
+          "id": "lomo-tomate-mayo",
+          "nombre": "Lomo Tomate Mayo",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa, carne de lomo soler y tomate.",
+          "precio": 6400,
+          "imagen": "/images/carta/lomo/lomo-tomate-mayo.jpg"
+        },
+        {
+          "id": "lomo-palta-tomate",
+          "nombre": "Lomo Palta Tomate",
+          "descripcion": "Pan frica 100% artesanal, carne de lomo soler, palta natural y tomate.",
+          "precio": 6400,
+          "imagen": "/images/carta/lomo/lomo-palta-tomate.jpg"
+        },
+        {
+          "id": "lomo-palta",
+          "nombre": "Lomo Palta",
+          "descripcion": "Pan frica 100% artesanal, carne de lomo soler y palta natural.",
+          "precio": 6100,
+          "imagen": "/images/carta/lomo/lomo-palta.jpg"
+        },
+        {
+          "id": "lomo-tomate",
+          "nombre": "Lomo Tomate",
+          "descripcion": "Pan frica 100% artesanal, carne de lomo soler y tomate.",
+          "precio": 6100,
+          "imagen": "/images/carta/lomo/lomo-tomate.jpg"
+        },
+        {
+          "id": "lomo-mayonesa",
+          "nombre": "Lomo Mayonesa",
+          "descripcion": "Pan frica 100% artesanal, con mayo casera de la casa y carne de lomo soler.",
+          "precio": 6100,
+          "imagen": "/images/carta/lomo/lomo-mayonesa.jpg"
+        },
+        {
+          "id": "lomo-huevo",
+          "nombre": "Lomo Huevo",
+          "descripcion": "Pan frica 100% artesanal, con huevo y carne de lomo soler.",
+          "precio": 6100,
+          "imagen": "/images/carta/lomo/lomo-huevo.jpg"
+        },
+        {
+          "id": "lomo-solo",
+          "nombre": "Lomo Solo",
+          "descripcion": "Pan frica 100% artesanal con carne de lomo soler.",
+          "precio": 5700,
+          "imagen": "/images/carta/lomo/lomo-solo.jpg"
+        }
+      ]
+    },
+    {
+      "categoria": "Platos a lo Pobre / Al Plato",
+      "slug": "al-plato",
+      "items": [
+        {
+          "id": "mechada-al-plato-italiana",
+          "nombre": "Mechada al Plato Italiana",
+          "descripcion": "100% artesanal, con mayo casera de la casa, carne mechada, palta natural y tomate.",
+          "imagen": "/images/carta/al-plato/mechada-al-plato-italiana.jpg",
+          "precio": 7500
+        },
+        {
+          "id": "ave-al-plato",
+          "nombre": "Ave al Plato",
+          "descripcion": "100% artesanal, con mayo casera de la casa, ave, palta natural y tomate.",
+          "imagen": "/images/carta/al-plato/ave-al-plato.jpg",
+          "precio": 5500
+        },
+        {
+          "id": "churrasco-chacarero-al-plato",
+          "nombre": "Churrasco Chacarero al Plato",
+          "descripcion": "Mayo casera de la casa, carne de churrasco, poroto verde y tomate.",
+          "imagen": "/images/carta/al-plato/churrasco-chacarero-al-plato.jpg",
+          "precio": 6200
+        },
+        {
+          "id": "churrasco-al-plato",
+          "nombre": "Churrasco al Plato",
+          "descripcion": "Mayo casera de la casa, carne de churrasco, palta natural y tomate.",
+          "imagen": "/images/carta/al-plato/churrasco-al-plato.jpg",
+          "precio": 7500
+        }
+      ]
+    },
+    {
+      "categoria": "Pizzas",
+      "slug": "pizzas",
+      "items": [
+        {
+          "id": "peperoni",
+          "nombre": "Peperoni",
+          "descripcion": "Salsa pomodoro, mozzarella, peperoni y orégano.",
+          "imagen": "/images/carta/pizzas/peperoni.jpg"
+        },
+        {
+          "id": "pepeoikos",
+          "nombre": "Pepeoikos",
+          "descripcion": "Salsa pomodoro, mozzarella, tocino, peperoni, cebolla salteada, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/pepeoikos.jpg"
+        },
+        {
+          "id": "chicken-bbq",
+          "nombre": "Chicken BBQ",
+          "descripcion": "Salsa pomodoro, mozzarella, pollo, salsa BBQ y orégano.",
+          "imagen": "/images/carta/pizzas/chicken-bbq.jpg"
+        },
+        {
+          "id": "napolitana",
+          "nombre": "Napolitana",
+          "descripcion": "Salsa pomodoro, jamón, queso gauda, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/napolitana.jpg",
+          "precioIndividual": 7250,
+          "precioGrande": 11950
+        },
+        {
+          "id": "oikos",
+          "nombre": "Oikos",
+          "descripcion": "Salsa pomodoro, mechada, queso gauda, champiñón, morrón, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/oikos.jpg",
+          "precioIndividual": 8450,
+          "precioGrande": 15450
+        },
+        {
+          "id": "vegetariana",
+          "nombre": "Vegetariana",
+          "descripcion": "Salsa pomodoro, choclo, queso gauda, champiñón, palmito, espárragos, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/vegetariana.jpg",
+          "precioIndividual": 8250,
+          "precioGrande": 13450
+        },
+        {
+          "id": "camaron",
+          "nombre": "Camarón",
+          "descripcion": "Salsa pomodoro, choclo, queso gauda, champiñón, palmito, espárragos, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/camaron.jpg",
+          "precioIndividual": 7850,
+          "precioGrande": 13950
+        },
+        {
+          "id": "champinones",
+          "nombre": "Champiñones",
+          "descripcion": "Salsa pomodoro, queso gauda, champiñón, morrón, aceitunas y orégano.",
+          "imagen": "/images/carta/pizzas/champinones.jpg",
+          "precioIndividual": 7750,
+          "precioGrande": 13850
+        },
+        {
+          "id": "salame",
+          "nombre": "Salame",
+          "descripcion": "Salsa pomodoro, queso gauda, salame y orégano.",
+          "imagen": "/images/carta/pizzas/salame.jpg",
+          "precioIndividual": 7150,
+          "precioGrande": 12100
+        },
+        {
+          "id": "oikos-kid",
+          "nombre": "Oikos Kid",
+          "descripcion": "Salsa pomodoro, queso gauda, vienesas y salsa BBQ.",
+          "imagen": "/images/carta/pizzas/oikos-kid.jpg",
+          "precioIndividual": 7250,
+          "precioGrande": 11950
+        },
+        {
+          "id": "espanola",
+          "nombre": "Española",
+          "descripcion": "Salsa pomodoro, queso gauda, vienesas y salsa BBQ.",
+          "imagen": "/images/carta/pizzas/espanola.jpg",
+          "precioIndividual": 7550,
+          "precioGrande": 13250
+        },
+        {
+          "id": "chilena",
+          "nombre": "Chilena",
+          "descripcion": "Salsa pomodoro, churrasco, queso gauda, aceitunas y orégano (cebolla opcional).",
+          "imagen": "/images/carta/pizzas/chilena.jpg",
+          "precioIndividual": 7240,
+          "precioGrande": 14100
+        }
+      ]
+    },
+    {
+      "categoria": "Cafetería",
+      "slug": "cafeteria",
+      "items": [
+        {
+          "id": "expresso",
+          "nombre": "Expresso",
+          "descripcion": "Shot de expresso 30ml.",
+          "imagen": "/images/carta/cafeteria/expresso.jpg",
+          "precio": 1900
+        },
+        {
+          "id": "americano",
+          "nombre": "Americano",
+          "descripcion": "Shot de expresso de 30ml y agua caliente.",
+          "imagen": "/images/carta/cafeteria/americano.jpg",
+          "precio": 2400
+        },
+        {
+          "id": "capuchino",
+          "nombre": "Capuchino",
+          "descripcion": "Shot de expresso de 30ml y espuma de leche.",
+          "imagen": "/images/carta/cafeteria/capuchino.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "mokaccino",
+          "nombre": "Mokaccino",
+          "descripcion": "Shot de expresso de 30ml y espuma de leche con chocolate.",
+          "imagen": "/images/carta/cafeteria/mokaccino.jpg",
+          "precio": 2900
+        },
+        {
+          "id": "latte",
+          "nombre": "Latte",
+          "descripcion": "Shot de expresso de 30ml y leche caliente.",
+          "imagen": "/images/carta/cafeteria/latte.jpg",
+          "precio": 2700
+        },
+        {
+          "id": "chocolate-caliente",
+          "nombre": "Chocolate Caliente",
+          "descripcion": "Chocolate caliente cremoso.",
+          "imagen": "/images/carta/cafeteria/chocolate-caliente.jpg",
+          "precio": 3000
+        },
+        {
+          "id": "macchiato",
+          "nombre": "Macchiato",
+          "descripcion": "Shot de expresso de 30ml manchado con espuma de leche.",
+          "imagen": "/images/carta/cafeteria/macchiato.jpg",
+          "precio": 2300
+        },
+        {
+          "id": "cafe-helado",
+          "nombre": "Café Helado",
+          "descripcion": "Shot de expresso 30ml con leche y suave helado de vainilla.",
+          "imagen": "/images/carta/cafeteria/cafe-helado.jpg",
+          "precio": 6000
+        }
+      ]
+    },
+    {
+      "categoria": "Postres",
+      "slug": "postres",
+      "items": [
+        {
+          "id": "kuchen-de-nuez",
+          "nombre": "Kuchen de Nuez",
+          "descripcion": "Kuchen artesanal de nuez.",
+          "imagen": "/images/carta/postres/kuchen-de-nuez.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "tartaleta-de-chocolate-manjar",
+          "nombre": "Tartaleta de Chocolate Manjar",
+          "descripcion": "Tartaleta de chocolate con manjar.",
+          "imagen": "/images/carta/postres/tartaleta-de-chocolate-manjar.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "cheesecake-de-chocolate",
+          "nombre": "Cheesecake de Chocolate",
+          "descripcion": "Cheesecake con cobertura de chocolate.",
+          "imagen": "/images/carta/postres/cheesecake-de-chocolate.jpg",
+          "precio": 3500
+        },
+        {
+          "id": "tartaleta-de-manzana",
+          "nombre": "Tartaleta de Manzana",
+          "descripcion": "Tartaleta artesanal de manzana.",
+          "imagen": "/images/carta/postres/tartaleta-de-manzana.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "pie-de-maracuya",
+          "nombre": "Pie de Maracuyá",
+          "descripcion": "Pie casero de maracuyá.",
+          "imagen": "/images/carta/postres/pie-de-maracuya.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "pie-de-limon",
+          "nombre": "Pie de Limón",
+          "descripcion": "Pie casero de limón con merengue.",
+          "imagen": "/images/carta/postres/pie-de-limon.jpg",
+          "precio": 2500
+        },
+        {
+          "id": "carlota-de-durazno",
+          "nombre": "Carlota de Durazno",
+          "descripcion": "Carlota casera de durazno.",
+          "imagen": "/images/carta/postres/carlota-de-durazno.jpg",
+          "precio": 3500
+        },
+        {
+          "id": "trufa",
+          "nombre": "Trufa",
+          "descripcion": "Trufa de chocolate.",
+          "imagen": "/images/carta/postres/trufa.jpg",
+          "precio": 1500
+        },
+        {
+          "id": "tiramisu",
+          "nombre": "Tiramisú",
+          "descripcion": "Tiramisú casero.",
+          "imagen": "/images/carta/postres/tiramisu.jpg",
+          "precio": 3500
+        }
+      ]
+    },
+    {
+      "categoria": "Papas y Snacks",
+      "slug": "papas-y-snacks",
+      "items": [
+        {
+          "id": "papas-fritas",
+          "nombre": "Papas Fritas",
+          "descripcion": "Papas fritas caseras.",
+          "imagen": "/images/carta/papas-y-snacks/papas-fritas.jpg",
+          "precioIndividual": 3800,
+          "precioGrande": 4800
+        },
+        {
+          "id": "salchipapa",
+          "nombre": "Salchipapa",
+          "descripcion": "300g de papitas con dos vienesas.",
+          "imagen": "/images/carta/papas-y-snacks/salchipapa.jpg",
+          "precio": 4200
+        },
+        {
+          "id": "chorrillana",
+          "nombre": "Chorrillana",
+          "descripcion": "300gr de papitas con 2 huevos, cebolla caramelizada y carne de churrasco.",
+          "imagen": "/images/carta/papas-y-snacks/chorrillana.jpg",
+          "precio": 8500
+        },
+        {
+          "id": "box-1",
+          "nombre": "Box 1",
+          "descripcion": "200gr de papitas con 5 nuggets.",
+          "imagen": "/images/carta/papas-y-snacks/box-1.jpg",
+          "precio": 5650
+        },
+        {
+          "id": "box-2",
+          "nombre": "Box 2",
+          "descripcion": "200gr de papitas con 5 nuggets y 4 empanaditas.",
+          "imagen": "/images/carta/papas-y-snacks/box-2.jpg",
+          "precio": 6850
+        },
+        {
+          "id": "box-3",
+          "nombre": "Box 3",
+          "descripcion": "200gr de papitas con 5 nuggets y 4 empanaditas.",
+          "imagen": "/images/carta/papas-y-snacks/box-3.jpg",
+          "precio": 8000
+        },
+        {
+          "id": "empanadas-porcion",
+          "nombre": "Empanadas Porción",
+          "descripcion": "6 empanaditas de queso.",
+          "imagen": "/images/carta/papas-y-snacks/empanadas-porcion.jpg",
+          "precio": 2400
+        },
+        {
+          "id": "nugget-porcion",
+          "nombre": "Nugget Porción",
+          "descripcion": "6 nuggets.",
+          "imagen": "/images/carta/papas-y-snacks/nugget-porcion.jpg",
+          "precio": 2800
+        }
+      ]
+    },
+    {
+      "categoria": "Tragos y Cócteles",
+      "slug": "tragos-y-cocteles",
+      "items": [
+        {
+          "id": "mojito-sabores",
+          "nombre": "Mojito Sabores",
+          "descripcion": "Goma, limón, pulpa de fruta y ron, con hojas de menta y agua gasificada.",
+          "imagen": "/images/carta/tragos-y-cocteles/mojito-sabores.jpg",
+          "precioX2": 10950
+        },
+        {
+          "id": "mojito-cubano",
+          "nombre": "Mojito Cubano",
+          "descripcion": "Goma, limón y ron, con hojas de menta y agua gasificada.",
+          "imagen": "/images/carta/tragos-y-cocteles/mojito-cubano.jpg",
+          "precioX2": 9950
+        },
+        {
+          "id": "electric-limonada",
+          "nombre": "Electric Limonada",
+          "descripcion": "Vodka, curasao, goma, limón y agua gasificada.",
+          "imagen": "/images/carta/tragos-y-cocteles/electric-limonada.jpg",
+          "precioX2": 10950
+        },
+        {
+          "id": "pisco-sour",
+          "nombre": "Pisco Sour",
+          "descripcion": "Pisco, limón y goma.",
+          "imagen": "/images/carta/tragos-y-cocteles/pisco-sour.jpg",
+          "precioX2": 8950
+        },
+        {
+          "id": "shop-cerveza",
+          "nombre": "Shop Cerveza",
+          "descripcion": "Shop de cerveza bien helada.",
+          "imagen": "/images/carta/tragos-y-cocteles/shop-cerveza.jpg",
+          "precioX2": 5950
+        },
+        {
+          "id": "jugos-naturales",
+          "nombre": "Jugos Naturales",
+          "descripcion": "Jugo natural de fruta.",
+          "imagen": "/images/carta/tragos-y-cocteles/jugos-naturales.jpg",
+          "precioX2": 4600
+        }
+      ]
+    },
+    {
+      "categoria": "Almuerzos",
+      "slug": "almuerzos",
+      "items": [
+        {
+          "id": "chuleta-de-cerdo",
+          "nombre": "Chuleta de Cerdo",
+          "descripcion": "Chuleta de cerdo con guarnición.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "pechuga-a-la-plancha",
+          "nombre": "Pechuga a la Plancha",
+          "descripcion": "Pechuga de pollo a la plancha con guarnición.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "pastel-de-choclo",
+          "nombre": "Pastel de Choclo",
+          "descripcion": "Pastel de choclo casero.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": null
+        },
+        {
+          "id": "pollo-asado-con-papas-fritas",
+          "nombre": "Pollo Asado con Papas Fritas",
+          "descripcion": "Pollo asado acompañado de papas fritas.",
+          "imagen": "/images/carta/almuerzos/pollo-asado-con-papas-fritas.jpg",
+          "precio": 7500
+        },
+        {
+          "id": "lasana",
+          "nombre": "Lasaña",
+          "descripcion": "Lasaña casera.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 8000
+        },
+        {
+          "id": "bistec-a-lo-pobre",
+          "nombre": "Bistec a lo Pobre",
+          "descripcion": "Bistec a lo pobre con papas fritas, cebolla y huevo.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 9750
+        },
+        {
+          "id": "costillas-con-papas-fritas",
+          "nombre": "Costillas con Papas Fritas",
+          "descripcion": "Costillas de cerdo con papas fritas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 8950
+        },
+        {
+          "id": "budin-de-zapallo-italiano",
+          "nombre": "Budín de Zapallo Italiano",
+          "descripcion": "Budín casero de zapallo italiano.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "prietas",
+          "nombre": "Prietas",
+          "descripcion": "Prietas con guarnición.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "tallarines",
+          "nombre": "Tallarines",
+          "descripcion": "Tallarines con salsa a elección.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "porotos",
+          "nombre": "Porotos",
+          "descripcion": "Porotos guisados.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "chupe-de-guatitas",
+          "nombre": "Chupe de Guatitas",
+          "descripcion": "Chupe casero de guatitas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "pastel-de-papas",
+          "nombre": "Pastel de Papas",
+          "descripcion": "Pastel de papas casero.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "lentejas",
+          "nombre": "Lentejas",
+          "descripcion": "Lentejas guisadas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "guiso-de-porotos-negros",
+          "nombre": "Guiso de Porotos Negros",
+          "descripcion": "Guiso casero de porotos negros.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "chuleta-a-lo-pobre",
+          "nombre": "Chuleta a lo Pobre",
+          "descripcion": "Chuleta a lo pobre con papas fritas, cebolla y huevo.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 8500
+        },
+        {
+          "id": "trutro-de-pollo-asado-con-papas-fritas",
+          "nombre": "Trutro de Pollo Asado con Papas Fritas",
+          "descripcion": "Trutro de pollo asado, acompañado de papas fritas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7500
+        },
+        {
+          "id": "guiso-de-carne-con-verduras",
+          "nombre": "Guiso de Carne con Verduras",
+          "descripcion": "Guiso casero de carne con verduras.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "carne-al-jugo-con-papas-fritas",
+          "nombre": "Carne al Jugo con Papas Fritas",
+          "descripcion": "Carne al jugo acompañada de papas fritas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7850
+        },
+        {
+          "id": "pavo-al-jugo",
+          "nombre": "Pavo al Jugo",
+          "descripcion": "Pavo al jugo con guarnición.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7000
+        },
+        {
+          "id": "osobuco-al-jugo",
+          "nombre": "Osobuco al Jugo",
+          "descripcion": "Osobuco al jugo con guarnición.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 8500
+        },
+        {
+          "id": "hipocalorico-pollo-carne",
+          "nombre": "Hipocalórico Pollo / Carne",
+          "descripcion": "Plato hipocalórico a elección de pollo o carne.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 6800
+        },
+        {
+          "id": "cazuela-de-osobuco",
+          "nombre": "Cazuela de Osobuco",
+          "descripcion": "Cazuela casera de osobuco.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 8000
+        },
+        {
+          "id": "pechuga-con-papas-fritas",
+          "nombre": "Pechuga con Papas Fritas",
+          "descripcion": "Pechuga de pollo con papas fritas.",
+          "imagen": "/images/carta/placeholder-default.jpg",
+          "precio": 7800
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "This modern web application streamlines project management for teams, enhancing collaboration and productivity through intuitive tools and real-time updates.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
