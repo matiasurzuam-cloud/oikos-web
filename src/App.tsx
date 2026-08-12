@@ -814,8 +814,8 @@ export default function App() {
           <img src="/images/general-mesas.jpg" alt="" aria-hidden="true" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', transform:'scale(1.2)', filter:'blur(28px) brightness(0.5)' }} />
           <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'140px 64px', opacity:0.14, mixBlendMode:'soft-light' }} />
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 60% 55% at center, transparent 40%, rgba(196,125,59,0.16) 100%)' }} />
-          <img src="/images/general-mesas.jpg" alt="Interior OIKO'S" style={{
-            position:'relative', width:'100%', height:'100%', objectFit:'contain',
+          <img src="/images/general-mesas.jpg" alt="Interior OIKO'S" className="object-cover md:object-contain" style={{
+            position:'relative', width:'100%', height:'100%',
             filter:'drop-shadow(0 20px 60px rgba(0,0,0,0.5))',
             maskImage:'radial-gradient(ellipse 78% 82% at center, black 55%, transparent 100%)',
             WebkitMaskImage:'radial-gradient(ellipse 78% 82% at center, black 55%, transparent 100%)',
