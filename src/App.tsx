@@ -177,7 +177,7 @@ function PlatoDelDiaCard({ plato }: { plato: PlatoDelDia }) {
       <div style={{ position:'absolute', top:'20px', right:'-38px', transform:'rotate(45deg)', background:C.red, color:'white', fontSize:'10px', fontWeight:800, letterSpacing:'0.14em', padding:'5px 44px', zIndex:2, boxShadow:'0 4px 10px rgba(0,0,0,0.35)' }}>HOY</div>
 
       <div style={{ position:'relative', borderRadius:'24px', padding:'30px', overflow:'hidden', background:'linear-gradient(165deg, #221A10 0%, #14110C 60%, #100D08 100%)' }}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'100px 46px', opacity:0.35, pointerEvents:'none' }} />
+        <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'100px 46px', opacity:0.15, mixBlendMode:'soft-light', pointerEvents:'none' }} />
         <div className="plato-shimmer" />
 
         <div style={{ position:'relative' }}>
@@ -812,7 +812,7 @@ export default function App() {
       <section style={{ position:'relative', minHeight:'100vh', display:'flex', alignItems:'flex-end' }}>
         <div style={{ position:'absolute', inset:0, overflow:'hidden' }}>
           <img src="/images/general-mesas.jpg" alt="" aria-hidden="true" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', transform:'scale(1.2)', filter:'blur(28px) brightness(0.5)' }} />
-          <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'140px 64px', opacity:0.5 }} />
+          <div style={{ position:'absolute', inset:0, backgroundImage:`url(${oikosWatermark})`, backgroundRepeat:'repeat', backgroundSize:'140px 64px', opacity:0.14, mixBlendMode:'soft-light' }} />
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 60% 55% at center, transparent 40%, rgba(196,125,59,0.16) 100%)' }} />
           <img src="/images/general-mesas.jpg" alt="Interior OIKO'S" style={{
             position:'relative', width:'100%', height:'100%', objectFit:'contain',
