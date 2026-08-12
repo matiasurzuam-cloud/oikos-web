@@ -170,6 +170,7 @@ function PlatoDelDiaCard({ plato }: { plato: PlatoDelDia }) {
       position: 'relative',
       borderRadius: '26px',
       padding: '2px',
+      overflow: 'hidden',
       background: `linear-gradient(135deg, ${C.amber}, rgba(196,125,59,0.15) 45%, ${C.amber})`,
     }}>
       {/* cinta "HOY" */}
