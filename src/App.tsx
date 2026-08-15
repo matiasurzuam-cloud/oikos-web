@@ -84,9 +84,8 @@ const MARQUEE = ['Artesanal','Molina · Chile','Masas Caseras','Cafetería de Au
 
 function getStatus() {
   const d = new Date().getDay(), m = new Date().getHours()*60+new Date().getMinutes()
-  if (d===0) return m>=1080 ? {open:true,  next:'Cierra a las 00:00'} : {open:false, next:'Abre a las 18:00'}
-  if (d>=5)  return m>=480  ? {open:true,  next:'Cierra a la 01:00 AM'} : {open:false, next:'Abre a las 08:00'}
-  return               m>=480  ? {open:true,  next:'Cierra a las 00:00'} : {open:false, next:'Abre a las 08:00'}
+  if (d===0) return m>=1020 ? {open:true,  next:'Cierra a las 00:00'} : {open:false, next:'Abre a las 17:00'}
+  return               m>=550  ? {open:true,  next:'Cierra a las 00:00'} : {open:false, next:'Abre a las 09:10'}
 }
 
 const fmt = (n: number) => '$' + n.toLocaleString('es-CL')
@@ -986,7 +985,7 @@ export default function App() {
                 </div>
                 <p className="serif" style={{ fontSize:'18px', fontWeight:700, color:C.text }}>Horarios de Atención</p>
               </div>
-              {[['Lunes a Jueves','08:00 – 00:00'],['Viernes y Sábado','08:00 – 01:00 AM'],['Domingo','18:00 – 00:00']].map(([d,h],i,arr)=>(
+              {[['Lunes a Sábado','09:10 – 00:00'],['Domingo','17:00 – 00:00']].map(([d,h],i,arr)=>(
                 <div key={d} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'16px 0', borderBottom: i<arr.length-1?`1px solid ${C.border}`:'none' }}>
                   <span style={{ fontSize:'14px', color:C.muted }}>{d}</span>
                   <span style={{ fontSize:'14px', fontWeight:700, color:C.amber }}>{h}</span>
